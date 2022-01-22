@@ -7,5 +7,7 @@ data = json.load(f)
 
 f.close()
 
-codecov_report = codecov_converter.convertCoverage(data)
+codecov_report = codecov_converter.convert_coverage(data)
 print(data)
+
+print(codecov_report)

@@ -1,5 +1,11 @@
 # omni-coveragereporter-python
 
+## Run Locally
+
+```shell
+python3 omni_coveragereporter_python.py
+```
+
 ## References
 
 - [Codecov Report Upload](https://docs.codecov.com/reference/upload)
