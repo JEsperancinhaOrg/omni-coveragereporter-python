@@ -6,6 +6,18 @@
 python3 omni_coveragereporter_python.py
 ```
 
+## Run Coverage
+
+```shell
+coverage run --source=omni-coveragereporter-python -m pytest
+
+coverage report -m
+
+coverage html
+coverage json
+coverage xml
+```
+
 ## References
 
 - [Codecov Report Upload](https://docs.codecov.com/reference/upload)

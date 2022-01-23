@@ -3,7 +3,7 @@ import json
 import codecov_converter
 import codecov_client
 
-f = open('reports/coverage.json')
+f = open('coverage.json')
 
 data = json.load(f)
 
