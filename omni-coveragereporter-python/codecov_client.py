@@ -22,7 +22,7 @@ def send_report(codecov_reports):
     headers = {
         'Content-Type': 'text/plain'
     }
-    r = requests.post(url, params=params, headers=headers, json="")
+    r = requests.post(url, params=params, headers=headers, data="")
     decode = r.content.decode("utf-8").split(sep='\n')
     view = decode[0],
     upload_to_s3_url = decode[1]
@@ -31,5 +31,5 @@ def send_report(codecov_reports):
     codecov_report = separator.join(codecov_reports) + separator
 
     print(codecov_report)
-    r = requests.post(upload_to_s3_url, headers=headers, json=codecov_report)
+    r = requests.put(upload_to_s3_url, headers=headers, data=codecov_report)
     return r.content.decode("utf-8")

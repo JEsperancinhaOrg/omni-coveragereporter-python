@@ -134,3 +134,6 @@ dmypy.json
 .idea
 __init__.py
 .DS_Store
+
+coverage.json
+!reports/coverage.json
