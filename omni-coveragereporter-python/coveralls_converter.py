@@ -27,5 +27,7 @@ def convert_coverage(data):
         'branch': repo.active_branch.name,
         'remotes': remotes
     }
+    source_files = {}
+    coverallls_report['sourceFiles'] = source_files
     coverallls_report['git'] = git_repo
     return coverallls_report
