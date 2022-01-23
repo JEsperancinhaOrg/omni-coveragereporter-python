@@ -24,8 +24,10 @@ def send_report(codecov_reports):
     }
     r = requests.post(url, params=params, headers=headers, data="")
     decode = r.content.decode("utf-8").split(sep='\n')
-    view = decode[0],
+    view = decode[0]
+    print(f"- Report contents will be visible here {view}")
     upload_to_s3_url = decode[1]
+    print(f"- Sending contents to {upload_to_s3_url}")
 
     print(decode)
     codecov_report = separator.join(codecov_reports) + separator
