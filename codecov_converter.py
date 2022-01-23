@@ -11,8 +11,6 @@ def convert_coverage(data, report=None):
         missing_lines = max(file_object['missing_lines']) if file_object['missing_lines'] else 0
         total_lines = max(executed_lines, missing_lines)
         codecov_file = codecov_files[file] if file in codecov_files else None
-        print('*****')
-        print(codecov_file)
         if codecov_file is None:
             codecov_file = {}
             codecov_files[file] = codecov_file
