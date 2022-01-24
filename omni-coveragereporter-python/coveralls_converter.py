@@ -51,7 +51,7 @@ def convert_coverage(data, report=None):
             file_object = data['files'][file_name]
             text_file = open(file_name, "r")
             file_content_bytes = text_file.read().encode('utf-8')
-            total_lines = coveragepy_parser.total_lines(file_object)
+            total_lines = coveragepy_parser.total_lines(file_object) + 1
             line_coverage = [None] * total_lines
             executed_lines = file_object['executed_lines']
             for entry in executed_lines:
