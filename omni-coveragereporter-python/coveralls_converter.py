@@ -27,7 +27,7 @@ def convert_coverage(data, report=None):
         coveralls_files = {}
         coveralls_report = {
             'repo_token': os.getenv('COVERALLS_REPO_TOKEN'),
-            'serviceName': 'local-ci'}
+            'service_name': 'local-ci'}
         head = {
             'id': commitHex,
             'author_name': commit.author.name,
