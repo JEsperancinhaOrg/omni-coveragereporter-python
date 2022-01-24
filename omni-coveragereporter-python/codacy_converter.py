@@ -32,7 +32,7 @@ def convert_coverage(data):
     total_lines = sum(map(lambda fn: len(data_files[fn]['executed_lines']) + len(
         data_files[fn]['missing_lines']), data_files))
     total_percent = total_covered * 100 / total_lines
-    codacy_report = {'total': total_percent}
+    codacy_report = {'total': int(total_percent)}
     codacy_file_reports = []
     codacy_report['fileReports'] = codacy_file_reports
 
@@ -40,7 +40,7 @@ def convert_coverage(data):
         file_object = data_files[file_name]
         file_covered = len(file_object['executed_lines'])
         file_lines = len(file_object['executed_lines']) + len(file_object['missing_lines'])
-        codacy_file_report = {'filename': file_name, 'total': file_covered * 100 / file_lines}
+        codacy_file_report = {'filename': file_name, 'total': int(file_covered * 100 / file_lines)}
         line_coverage = {}
         for index in file_object['executed_lines']:
             line_coverage[str(index)] = 1

@@ -1,9 +1,9 @@
 {
-  "total": 6.557377049180328,
+  "total": 6,
   "fileReports": [
     {
       "filename": "omni-coveragereporter-python/codecov_client.py",
-      "total": 0.0,
+      "total": 0,
       "coverage": {
         "1": 0,
         "3": 0,
@@ -30,7 +30,7 @@
     },
     {
       "filename": "omni-coveragereporter-python/codecov_converter.py",
-      "total": 0.0,
+      "total": 0,
       "coverage": {
         "1": 0,
         "2": 0,
@@ -60,7 +60,7 @@
     },
     {
       "filename": "omni-coveragereporter-python/omni_coveragereporter_python.py",
-      "total": 0.0,
+      "total": 0,
       "coverage": {
         "1": 0,
         "3": 0,
@@ -78,7 +78,7 @@
     },
     {
       "filename": "omni-coveragereporter-python/test_app.py",
-      "total": 100.0,
+      "total": 100,
       "coverage": {
         "2": 1,
         "3": 1,
