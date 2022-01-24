@@ -18,3 +18,5 @@ f.close()
 
 coveralls_report = coveralls_converter.convert_coverage(data)
 print(json.dumps(coveralls_report))
+coveralls_report = coveralls_converter.convert_coverage(data, coveralls_report)
+print(json.dumps(coveralls_report))
