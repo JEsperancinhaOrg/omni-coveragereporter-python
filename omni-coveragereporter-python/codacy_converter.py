@@ -37,15 +37,16 @@ def convert_coverage(data):
     codacy_report['fileReports'] = codacy_file_reports
 
     for file_name in data_files:
-        file_object = data_files[file_name]
-        file_covered = len(file_object['executed_lines'])
-        file_lines = len(file_object['executed_lines']) + len(file_object['missing_lines'])
-        codacy_file_report = {'filename': file_name, 'total': int(file_covered * 100 / file_lines)}
-        line_coverage = {}
-        for index in file_object['executed_lines']:
-            line_coverage[str(index)] = 1
-        for index in file_object['missing_lines']:
-            line_coverage[str(index)] = 0
-        codacy_file_reports.append(codacy_file_report)
-        codacy_file_report['coverage'] = line_coverage
+        if not file_name.endswith('__init__.py') and not file_name.startswith('test_'):
+            file_object = data_files[file_name]
+            file_covered = len(file_object['executed_lines'])
+            file_lines = len(file_object['executed_lines']) + len(file_object['missing_lines'])
+            codacy_file_report = {'filename': file_name, 'total': int(file_covered * 100 / file_lines)}
+            line_coverage = {}
+            for index in file_object['executed_lines']:
+                line_coverage[str(index)] = 1
+            for index in file_object['missing_lines']:
+                line_coverage[str(index)] = 0
+            codacy_file_reports.append(codacy_file_report)
+            codacy_file_report['coverage'] = line_coverage
     return codacy_report
