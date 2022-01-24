@@ -7,21 +7,35 @@ import codecov_converter
 import coveralls_client
 import coveralls_converter
 
+banner = """
+  ______   .___  ___. .__   __.  __     .______       _______ .______     ______   .______     .___________. _______ .______
+ /  __  \  |   \/   | |  \ |  | |  |    |   _  \     |   ____||   _  \   /  __  \  |   _  \    |           ||   ____||   _  \ 
+|  |  |  | |  \  /  | |   \|  | |  |    |  |_)  |    |  |__   |  |_)  | |  |  |  | |  |_)  |   `---|  |----`|  |__   |  |_)  |
+|  |  |  | |  |\/|  | |  . `  | |  |    |      /     |   __|  |   ___/  |  |  |  | |      /        |  |     |   __|  |      /
+|  `--'  | |  |  |  | |  |\   | |  |    |  |\  \----.|  |____ |  |      |  `--'  | |  |\  \----.   |  |     |  |____ |  |\  \----.
+ \______/  |__|  |__| |__| \__| |__|    | _| `._____||_______|| _|       \______/  | _| `._____|   |__|     |_______|| _| `._____|
+
+<Experimental Version>
+
+by João Esperancinha
+"""
+
 f = open('coverage.json')
 data = json.load(f)
 f.close()
 
+print(banner)
+print("Processing Codecov reports...")
 codecov_report = codecov_converter.convert_coverage(data)
-print(json.dumps(codecov_report))
-report = codecov_client.send_report([json.dumps(codecov_report)])
-print(report)
+codecov_client.send_report([json.dumps(codecov_report)])
+print("Codecov reporting complete!")
 
+print("Processing Coveralls reports...")
 coveralls_report = coveralls_converter.convert_coverage(data)
-print(json.dumps(coveralls_report))
-report = coveralls_client.send_report(json.dumps(coveralls_report))
-print(report)
+coveralls_client.send_report(json.dumps(coveralls_report))
+print("Coveralls reporting complete!")
 
+print("Processing Codacy reports...")
 codacy_report = codacy_converter.convert_coverage(data)
-print(json.dumps(codacy_report))
-report = codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON)
-print(report)
+codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON)
+print("Codacy reporting complete!")
