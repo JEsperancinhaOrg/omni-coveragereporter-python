@@ -47,27 +47,28 @@ def convert_coverage(data, report=None):
         coveralls_report['source_files'] = []
     source_files = coveralls_report['source_files']
     for file_name in data['files']:
-        file_object = data['files'][file_name]
-        text_file = open(file_name, "r")
-        file_content_bytes = text_file.read().encode('utf-8')
-        total_lines = coveragepy_parser.total_lines(file_object)
-        line_coverage = [None] * total_lines
-        executed_lines = file_object['executed_lines']
-        for entry in executed_lines:
-            line_coverage[entry - 1] = 1
-        missing_lines = file_object['missing_lines']
-        for entry in missing_lines:
-            line_coverage[entry - 1] = 0 if entry not in line_coverage else line_coverage[entry - 1]
-        source_file = {
-            'name': file_name,
-            'source_digest': hashlib.md5(file_content_bytes).hexdigest(),
-            'coverage': line_coverage,
-        }
-        filter_result = list(filter(lambda file: file['name'] == file_name, coveralls_files))
-        existing_file = filter_result[0] if len(filter_result) > 0 else None
-        if existing_file is None:
-            source_files.append(source_file)
-        else:
-            existing_file['coverage'] = merge_coverage(existing_file, source_file)
+        if file_name!='__init__.py':
+            file_object = data['files'][file_name]
+            text_file = open(file_name, "r")
+            file_content_bytes = text_file.read().encode('utf-8')
+            total_lines = coveragepy_parser.total_lines(file_object)
+            line_coverage = [None] * total_lines
+            executed_lines = file_object['executed_lines']
+            for entry in executed_lines:
+                line_coverage[entry - 1] = 1
+            missing_lines = file_object['missing_lines']
+            for entry in missing_lines:
+                line_coverage[entry - 1] = 0
+            source_file = {
+                'name': file_name,
+                'source_digest': hashlib.md5(file_content_bytes).hexdigest(),
+                'coverage': line_coverage,
+            }
+            filter_result = list(filter(lambda file: file['name'] == file_name, coveralls_files))
+            existing_file = filter_result[0] if len(filter_result) > 0 else None
+            if existing_file is None:
+                source_files.append(source_file)
+            else:
+                existing_file['coverage'] = merge_coverage(existing_file, source_file)
 
     return coveralls_report
