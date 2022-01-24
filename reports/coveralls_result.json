@@ -3,12 +3,12 @@
   "service_name": "local-ci",
   "git": {
     "head": {
-      "id": "fe2f3e26313686f3d8d1964d26fad3945ead952e",
+      "id": "44d979af373c305b7e19cc4e9aef390e25f59a40",
       "author_name": "Joao Esperancinha",
       "author_email": "jofisaes@gmail.com",
       "committer_name": "Joao Esperancinha",
       "committer_email": "jofisaes@gmail.com",
-      "message": "\ud83c\udf3f Saves temporary coveralls file\n"
+      "message": "\ud83c\udf3f All Coverages\n"
     },
     "branch": "main",
     "remotes": [
@@ -21,7 +21,7 @@
   "source_files": [
     {
       "name": "omni-coveragereporter-python/codecov_client.py",
-      "source_digest": "855d09a57baaa71b6949e0eb47e63b6d",
+      "source_digest": "bc1abdfbc846c75c68f4da06c8b8730c",
       "coverage": [
         null,
         null,
@@ -94,7 +94,7 @@
     },
     {
       "name": "omni-coveragereporter-python/omni_coveragereporter_python.py",
-      "source_digest": "2f9ad2177919b6fb85bf803b7e78551f",
+      "source_digest": "7667df9802cff941bfc64404f760cc4c",
       "coverage": [
         null,
         null,
@@ -125,12 +125,12 @@
       "source_digest": "c54f9d7305c5bc4466fd913c6df6a54a",
       "coverage": [
         null,
-        2,
-        2,
+        1,
+        1,
         null,
         null,
-        2,
-        2
+        1,
+        1
       ]
     }
   ]
