@@ -2,6 +2,7 @@ import json
 
 import codecov_converter
 import codecov_client
+import coveralls_client
 
 import coveralls_converter
 
@@ -20,3 +21,5 @@ coveralls_report = coveralls_converter.convert_coverage(data)
 print(json.dumps(coveralls_report))
 coveralls_report = coveralls_converter.convert_coverage(data, coveralls_report)
 print(json.dumps(coveralls_report))
+report = coveralls_client.send_report(json.dumps(coveralls_report))
+print(report)

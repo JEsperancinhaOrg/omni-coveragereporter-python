@@ -21,19 +21,19 @@ def merge_coverage(existing_file, source_file):
 
 def convert_coverage(data, report=None):
     if report:
-        coveralls_files = report['sourceFiles']
+        coveralls_files = report['source_files']
         coveralls_report = report
     else:
         coveralls_files = {}
         coveralls_report = {
-            'repoToken': os.getenv('COVERALLS_REPO_TOKEN'),
+            'repo_token': os.getenv('COVERALLS_REPO_TOKEN'),
             'serviceName': 'local-ci'}
         head = {
             'id': commitHex,
-            'authorName': commit.author.name,
-            'authorEmail': commit.author.email,
-            'committerName': commit.committer.name,
-            'committerEmail': commit.committer.email,
+            'author_name': commit.author.name,
+            'author_email': commit.author.email,
+            'committer_name': commit.committer.name,
+            'committer_email': commit.committer.email,
             'message': commit.message
         }
         remotes = list(map(lambda remote: {'name': remote.name, 'url': remote.url}, repo.remotes))
@@ -44,8 +44,8 @@ def convert_coverage(data, report=None):
             'remotes': remotes
         }
         coveralls_report['git'] = git_repo
-        coveralls_report['sourceFiles'] = []
-    source_files = coveralls_report['sourceFiles']
+        coveralls_report['source_files'] = []
+    source_files = coveralls_report['source_files']
     for file_name in data['files']:
         file_object = data['files'][file_name]
         text_file = open(file_name, "r")
@@ -57,7 +57,7 @@ def convert_coverage(data, report=None):
             line_coverage[entry - 1] = 1 if entry in executed_lines else 0
         source_file = {
             'name': file_name,
-            'sourceDigest': hashlib.md5(file_content_bytes).hexdigest(),
+            'source_digest': hashlib.md5(file_content_bytes).hexdigest(),
             'coverage': line_coverage,
         }
         filter_result = list(filter(lambda file: file['name'] == file_name, coveralls_files))
