@@ -3,8 +3,9 @@ import json
 import codecov_converter
 import codecov_client
 import coveralls_client
-
 import coveralls_converter
+import codacy_client
+import codacy_converter
 
 f = open('coverage.json')
 data = json.load(f)
@@ -17,9 +18,16 @@ f.close()
 # report = codecov_client.send_report([json.dumps(codecov_report)])
 # print(report)
 
-coveralls_report = coveralls_converter.convert_coverage(data)
-print(json.dumps(coveralls_report))
-coveralls_report = coveralls_converter.convert_coverage(data, coveralls_report)
-print(json.dumps(coveralls_report))
-report = coveralls_client.send_report(json.dumps(coveralls_report))
+# coveralls_report = coveralls_converter.convert_coverage(data)
+# print(json.dumps(coveralls_report))
+# coveralls_report = coveralls_converter.convert_coverage(data, coveralls_report)
+# print(json.dumps(coveralls_report))
+# report = coveralls_client.send_report(json.dumps(coveralls_report))
+# print(report)
+
+codacy_report = codacy_converter.convert_coverage(data)
+print(json.dumps(codacy_report))
+codacy_report = codacy_converter.convert_coverage(data, codacy_report)
+print(json.dumps(codacy_report))
+report = codacy_client.send_report(json.dumps(codacy_report))
 print(report)

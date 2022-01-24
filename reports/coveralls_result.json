@@ -1,0 +1,137 @@
+{
+  "repo_token": "<REDACTED>",
+  "service_name": "local-ci",
+  "git": {
+    "head": {
+      "id": "fe2f3e26313686f3d8d1964d26fad3945ead952e",
+      "author_name": "Joao Esperancinha",
+      "author_email": "jofisaes@gmail.com",
+      "committer_name": "Joao Esperancinha",
+      "committer_email": "jofisaes@gmail.com",
+      "message": "\ud83c\udf3f Saves temporary coveralls file\n"
+    },
+    "branch": "main",
+    "remotes": [
+      {
+        "name": "origin",
+        "url": "git@github.com:JEsperancinhaOrg/omni-coveragereporter-python.git"
+      }
+    ]
+  },
+  "source_files": [
+    {
+      "name": "omni-coveragereporter-python/codecov_client.py",
+      "source_digest": "855d09a57baaa71b6949e0eb47e63b6d",
+      "coverage": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "omni-coveragereporter-python/codecov_converter.py",
+      "source_digest": "4af31bdaef1f3fa0bdd33f9502cdf67e",
+      "coverage": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "omni-coveragereporter-python/omni_coveragereporter_python.py",
+      "source_digest": "2f9ad2177919b6fb85bf803b7e78551f",
+      "coverage": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "omni-coveragereporter-python/test_app.py",
+      "source_digest": "c54f9d7305c5bc4466fd913c6df6a54a",
+      "coverage": [
+        null,
+        2,
+        2,
+        null,
+        null,
+        2,
+        2
+      ]
+    }
+  ]
+}
