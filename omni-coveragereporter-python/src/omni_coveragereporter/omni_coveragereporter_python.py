@@ -33,16 +33,16 @@ if __name__ == '__main__':
     if codecov_token is not None:
         print("Processing Codecov reports...")
         codecov_report = codecov_converter.convert_coverage(data)
-        codecov_client.send_report([json.dumps(codecov_report)])
+        print(codecov_client.send_report([json.dumps(codecov_report)]))
         print("Codecov reporting complete!")
     else:
         print("* CODECOV_TOKEN not configured.")
 
-    coveralls_token = os.getenv('COVERALLS_REPO_TOKEN'),
+    coveralls_token = os.getenv('COVERALLS_REPO_TOKEN')
     if coveralls_token is not None:
         print("Processing Coveralls reports...")
         coveralls_report = coveralls_converter.convert_coverage(data)
-        coveralls_client.send_report(json.dumps(coveralls_report))
+        print(coveralls_client.send_report(json.dumps(coveralls_report)))
         print("Coveralls reporting complete!")
     else:
         print ("* COVERALLS_REPO_TOKEN not configured.")
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     if codacy_token is not None:
         print("Processing Codacy reports...")
         codacy_report = codacy_converter.convert_coverage(data)
-        codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON)
+        print(codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON))
         print("Codacy reporting complete!")
     else:
         print ("* CODACY_PROJECT_TOKEN not configured.")
