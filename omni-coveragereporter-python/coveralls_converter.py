@@ -3,6 +3,7 @@ import os
 
 import git
 
+import common
 import coveragepy_parser
 
 repo = git.Repo(os.getcwd())
@@ -47,7 +48,7 @@ def convert_coverage(data, report=None):
         coveralls_report['source_files'] = []
     source_files = coveralls_report['source_files']
     for file_name in data['files']:
-        if not file_name.endswith('__init__.py') and not file_name.startswith('test_'):
+        if common.valid(file_name):
             file_object = data['files'][file_name]
             text_file = open(file_name, "r")
             file_content_bytes = text_file.read().encode('utf-8')

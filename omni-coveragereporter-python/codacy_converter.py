@@ -1,6 +1,5 @@
 from enum import Enum
-from nis import match
-
+import common
 
 class Language(Enum):
     JAVA = 1
@@ -37,7 +36,7 @@ def convert_coverage(data):
     codacy_report['fileReports'] = codacy_file_reports
 
     for file_name in data_files:
-        if not file_name.endswith('__init__.py') and not file_name.contains('test_'):
+        if common.valid(file_name):
             file_object = data_files[file_name]
             file_covered = len(file_object['executed_lines'])
             file_lines = len(file_object['executed_lines']) + len(file_object['missing_lines'])

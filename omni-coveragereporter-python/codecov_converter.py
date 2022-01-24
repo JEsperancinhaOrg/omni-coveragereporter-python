@@ -1,3 +1,4 @@
+import common
 import coveragepy_parser
 
 
@@ -9,7 +10,7 @@ def convert_coverage(data, report=None):
         codecov_files = {}
         codecov_report = {"coverage": codecov_files}
     for file_name in data['files']:
-        if not file_name.endswith('__init__.py') and not file_name.startswith('test_'):
+        if common.valid(file_name):
             file_object = data['files'][file_name]
             total_lines = coveragepy_parser.total_lines(file_object)
             codecov_file = codecov_files[file_name] if file_name in codecov_files else None
