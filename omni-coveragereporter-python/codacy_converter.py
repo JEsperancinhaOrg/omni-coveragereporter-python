@@ -1,6 +1,5 @@
 from enum import Enum
-
-import coveragepy_parser
+from nis import match
 
 
 class Language(Enum):
@@ -13,6 +12,18 @@ class Language(Enum):
     def capitalized(self):
         name = self.name
         return "".join(list(map(lambda t: t.capitalize(), name.split("_"))))
+
+    def ext(self):
+        if self is Language.JAVA:
+            return "java"
+        if self is Language.KOTLIN:
+            return "kt"
+        if self is Language.SCALA:
+            return "scala"
+        if self is Language.PYTHON:
+            return "py"
+        if self is Language.JAVA_SCRIPT:
+            return "js"
 
 
 def convert_coverage(data):
