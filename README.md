@@ -5,7 +5,7 @@
 [![GitHub release](https://img.shields.io/github/release-pre/jesperancinhaorg/omni-coveragereporter-python.svg)](https://github.com/jesperancinhaorg/omni-coveragereporter-python/releases)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jesperancinhaorg/omni-coveragereporter-python)](https://github.com/jesperancinhaorg/omni-coveragereporter-python/releases)
 
-[![omni-coveragereporter-python](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python/actions/workflows/python-package-pull-request.yml/badge.svg)](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python/actions/workflows/python-package-pull-request.yml)
+[![omni-coveragereporter-python](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python/actions/workflows/python-package.yml/badge.svg)](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python/actions/workflows/python-package.yml)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f25fb0adabc74f129271fed966b6e8fa)](https://www.codacy.com/gh/JEsperancinhaOrg/omni-coveragereporter-python/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/omni-coveragereporter-python&amp;utm_campaign=Badge_Grade)
 
