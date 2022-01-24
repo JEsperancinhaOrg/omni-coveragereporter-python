@@ -38,7 +38,6 @@ def convert_coverage(data, report=None):
             'message': commit.message
         }
         remotes = list(map(lambda remote: {'name': remote.name, 'url': remote.url}, repo.remotes))
-        print(remotes)
         git_repo = {
             'head': head,
             'branch': repo.active_branch.name,

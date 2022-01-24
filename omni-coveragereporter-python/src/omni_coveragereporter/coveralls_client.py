@@ -12,7 +12,6 @@ coveralls_tmp_file = os.path.join(temporaryFolder, coveralls_file)
 
 
 def send_report(report):
-    print(report)
     file_save = open(coveralls_tmp_file, "w")
     file_save.write(report)
     print(f"- Saved file in {file_save.name}")

@@ -32,11 +32,15 @@ coverage xml
 ## Python packaging commands
 
 ```bash
-sudo pip3 install twine
+pip3 install twine
 
-python setup.py sdist
+cd omni-coveragereporter-python
 
-sudo pip3 install dist/geo_calculator-0.1.2.tar.gz
+python3 setup.py sdist
+
+pip3 install dist/omni_coveragereporter-0.0.0.tar.gz
+
+pip3 uninstall omni_coveragereporter
 
 twine upload dist/*
 ```
@@ -46,9 +50,9 @@ twine upload dist/*
 ## Install/Uninstall Python libraries
 
 ```bash
-sudo pip uninstall geo_calculator
+sudo pip uninstall omni_coveragereporter
 
-sudo pip install geo_calculator
+sudo pip install omni_coveragereporter
 ```
 
 ---
