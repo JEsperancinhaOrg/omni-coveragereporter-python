@@ -27,7 +27,7 @@ f.close()
 
 codacy_report = codacy_converter.convert_coverage(data)
 print(json.dumps(codacy_report))
-codacy_report = codacy_converter.convert_coverage(data, codacy_report)
+codacy_report = codacy_converter.convert_coverage(data)
 print(json.dumps(codacy_report))
 report = codacy_client.send_report(json.dumps(codacy_report))
 print(report)
