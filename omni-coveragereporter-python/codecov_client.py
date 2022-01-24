@@ -13,7 +13,6 @@ separator = "\n<<<<<< EOF\n"
 
 
 def send_report(codecov_reports):
-    print(commit)
     params = {
         'commit': commit,
         'token': os.getenv('CODECOV_TOKEN'),

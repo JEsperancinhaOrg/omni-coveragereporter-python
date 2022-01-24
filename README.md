@@ -1,5 +1,13 @@
 # omni-coveragereporter-python
 
+[![Twitter URL](https://img.shields.io/twitter/url?logoColor=blue&style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial)](https://twitter.com/intent/tweet?text=%20Checkout%20this%20%40github%20repo%20by%20%40joaofse%20%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB%3A%20https%3A//github.com/JEsperancinhaOrg/omni-coveragereporter-python)
+[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=omni-coveragereporter-python&color=informational)](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f25fb0adabc74f129271fed966b6e8fa)](https://www.codacy.com/gh/JEsperancinhaOrg/omni-coveragereporter-python/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/omni-coveragereporter-python&amp;utm_campaign=Badge_Grade)
+
+[![Coverage Status](https://coveralls.io/repos/github/JEsperancinhaOrg/omni-coveragereporter-python/badge.svg?branch=main)](https://coveralls.io/github/JEsperancinhaOrg/omni-coveragereporter-python?branch=main)
+[![codecov](https://codecov.io/gh/JEsperancinhaOrg/omni-coveragereporter-python/branch/main/graph/badge.svg?token=NBlnQ2Qb1D)](https://codecov.io/gh/JEsperancinhaOrg/omni-coveragereporter-python)
+
 ## Run Locally
 
 ```shell
