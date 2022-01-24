@@ -2,6 +2,7 @@ import hashlib
 import os
 
 import git
+import coveragepy_parser
 
 repo = git.Repo(os.getcwd())
 master = repo.head.reference
@@ -40,6 +41,7 @@ def convert_coverage(data, report = None):
         file_object = data['files'][fileName]
         text_file = open(fileName, "r")
         file_content_bytes = text_file.read().encode('utf-8')
+        total_lines = coveragepy_parser.total_lines(file_object)
         source_file = {
             'name': fileName,
             'sourceDigest': hashlib.md5(file_content_bytes).hexdigest(),

@@ -1,3 +1,6 @@
+import coveragepy_parser
+
+
 def convert_coverage(data, report=None):
     if report:
         codecov_files = report['coverage']
@@ -7,9 +10,7 @@ def convert_coverage(data, report=None):
         codecov_report = {"coverage": codecov_files}
     for file in data['files']:
         file_object = data['files'][file]
-        executed_lines = max(file_object['executed_lines']) if file_object['executed_lines'] else 0
-        missing_lines = max(file_object['missing_lines']) if file_object['missing_lines'] else 0
-        total_lines = max(executed_lines, missing_lines)
+        total_lines = coveragepy_parser.total_lines(file_object)
         codecov_file = codecov_files[file] if file in codecov_files else None
         if codecov_file is None:
             codecov_file = {}
