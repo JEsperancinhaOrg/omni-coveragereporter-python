@@ -4,6 +4,7 @@
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=omni-coveragereporter-python&color=informational)](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python)
 [![GitHub release](https://img.shields.io/github/release-pre/jesperancinhaorg/omni-coveragereporter-python.svg)](https://github.com/jesperancinhaorg/omni-coveragereporter-python/releases)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jesperancinhaorg/omni-coveragereporter-python)](https://github.com/jesperancinhaorg/omni-coveragereporter-python/releases)
+[![PyPI](https://img.shields.io/pypi/v/omni-coveragereporter)](https://pypi.org/project/omni-coveragereporter/)
 
 [![omni-coveragereporter-python](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python/actions/workflows/python-package.yml/badge.svg)](https://github.com/JEsperancinhaOrg/omni-coveragereporter-python/actions/workflows/python-package.yml)
 
