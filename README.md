@@ -14,6 +14,31 @@
 [![Coverage Status](https://coveralls.io/repos/github/JEsperancinhaOrg/omni-coveragereporter-python/badge.svg?branch=main)](https://coveralls.io/github/JEsperancinhaOrg/omni-coveragereporter-python?branch=main)
 [![codecov](https://codecov.io/gh/JEsperancinhaOrg/omni-coveragereporter-python/branch/main/graph/badge.svg?token=NBlnQ2Qb1D)](https://codecov.io/gh/JEsperancinhaOrg/omni-coveragereporter-python)
 
+## Intro
+
+I created this plugin to support my exclusive Python projects. This is a spin-off project from the original one I've created to support my maven projects on [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=omni-coveragereporter-maven-plugin&color=informational)](https://github.com/JEsperancinhaOrg/omni-reporter-maven-plugin).
+
+Current version is very limited by comparison and not much is configurable.
+
+You can find working example on this project: [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)
+
+## Features
+
+#### 1.  Reporting file supported
+
+| Type             | Status | Notes                                                         | Available from Release | Example Project                                                                                                                                                                |
+|------------------|--------|---------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Coverage Py JSON | ✅      | Coverage PY JSON file(s) must be generated in the root folder | 0.0.0                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)  |
+
+#### 2.  Online API's supported
+
+| Type       | Status | Notes | Environment Variables                                                                                                                                                                                     | Available from Release |
+|------------|--------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+| Coveralls  | ✅     |       | `COVERALLS_REPO_TOKEN` or `COVERALLS_TOKEN`                                                                                                                                                               | 0.0.0                  |
+| Codacy     | ✅      |       | `CODACY_PROJECT_TOKEN`                                                                                                                                                                                    | 0.0.0                  |
+| CodeCov    | ✅      |       | `CODECOV_TOKEN`                                                                                                                                                                                           | 0.0.0                  |
+
+
 ## Run Locally
 
 ```shell
