@@ -20,7 +20,7 @@ I created this plugin to support my exclusive Python projects. This is a spin-of
 
 Current version is very limited by comparison and not much is configurable.
 
-You can find working example on this project: [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)
+You can find a working example on this project: [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)
 
 ## Features
 
