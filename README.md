@@ -17,6 +17,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/JEsperancinhaOrg/omni-coveragereporter-python/badge.svg?branch=main)](https://coveralls.io/github/JEsperancinhaOrg/omni-coveragereporter-python?branch=main)
 [![codecov](https://codecov.io/gh/JEsperancinhaOrg/omni-coveragereporter-python/branch/main/graph/badge.svg?token=NBlnQ2Qb1D)](https://codecov.io/gh/JEsperancinhaOrg/omni-coveragereporter-python)
 
+[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinhaorg/omni-coveragereporter-python.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinhaorg/omni-coveragereporter-python.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinhaorg/omni-coveragereporter-python.svg)](#)
+
 ## Intro
 
 I created this plugin to support my exclusive Python projects. This is a spin-off project from the original one I've created to support my maven projects on [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=omni-coveragereporter-maven-plugin&color=informational)](https://github.com/JEsperancinhaOrg/omni-reporter-maven-plugin).
