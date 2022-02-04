@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.abspath('../omni-coveragereporter-python/src/omni_cov
 
 
 def test_is_coverage_py():
-    text_from_file = get_text_from_file("coverage.json")
+    text_from_file = get_text_from_file("reports/coverage.json")
     assert is_coverage_py(text_from_file) is True
 
 
@@ -28,5 +28,5 @@ def test_is_coverage_go():
 
 
 def test_is_not_coverage_go():
-    text_from_file = get_text_from_file("coverage.json")
+    text_from_file = get_text_from_file("reports/coverage.json")
     assert is_coverage_go(text_from_file) is False
