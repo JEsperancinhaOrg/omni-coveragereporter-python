@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import glob
 import json
 import os
 
@@ -23,35 +23,63 @@ banner = """
 by João Esperancinha
 """
 
-if __name__ == '__main__':
-    f = open('coverage.json')
-    data = json.load(f)
-    f.close()
 
+def create_reports(all_report_texts):
     print(banner)
-    codecov_token = os.getenv('CODECOV_TOKEN')
-    if codecov_token is not None:
-        print("Processing Codecov reports...")
-        codecov_report = codecov_converter.convert_coverage(data)
+    codacy_report = []
+    codecov_report = None
+    coveralls_report = None
+    for data_text in all_report_texts:
+        codecov_token = os.getenv('CODECOV_TOKEN')
+        if codecov_token is not None:
+            print("Processing Codecov reports...")
+            codecov_report = codecov_converter.convert_coverage(data_text)
+        else:
+            print("* CODECOV_TOKEN not configured.")
+
+        coveralls_token = os.getenv('COVERALLS_REPO_TOKEN')
+        if coveralls_token is not None:
+            print("Processing Coveralls reports...")
+            coveralls_report = coveralls_converter.convert_coverage(data_text)
+        else:
+            print("* COVERALLS_REPO_TOKEN not configured.")
+
+        codacy_token = os.getenv('CODACY_PROJECT_TOKEN')
+        if codacy_token is not None:
+            print("Processing Codacy reports...")
+            codacy_report.append(codacy_converter.convert_coverage_py(data_text))
+        else:
+            print("* CODACY_PROJECT_TOKEN not configured.")
+
+    if codecov_report is not None:
         print(codecov_client.send_report([json.dumps(codecov_report)]))
         print("Codecov reporting complete!")
-    else:
-        print("* CODECOV_TOKEN not configured.")
 
-    coveralls_token = os.getenv('COVERALLS_REPO_TOKEN')
-    if coveralls_token is not None:
-        print("Processing Coveralls reports...")
-        coveralls_report = coveralls_converter.convert_coverage(data)
+    if coveralls_report is not None:
         print(coveralls_client.send_report(json.dumps(coveralls_report)))
         print("Coveralls reporting complete!")
-    else:
-        print ("* COVERALLS_REPO_TOKEN not configured.")
 
-    codacy_token = os.getenv('CODACY_PROJECT_TOKEN')
-    if codacy_token is not None:
-        print("Processing Codacy reports...")
-        codacy_report = codacy_converter.convert_coverage(data)
+    if codacy_report is not None:
         print(codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON))
         print("Codacy reporting complete!")
-    else:
-        print ("* CODACY_PROJECT_TOKEN not configured.")
+
+
+def get_text_from_file(file_name):
+    f = open(file_name)
+    data = json.load(f)
+    f.close()
+    return data
+
+
+if __name__ == '__main__':
+    allDocs = []
+    coveragePyDocs = [name for name in glob.glob("coverage*.json")]
+    coverageGoDocs = [name for name in glob.glob("coverage*.out")]
+    allDocs.extend(coveragePyDocs)
+    allDocs.extend(coverageGoDocs)
+
+    print(f"- Found potential report files {allDocs}")
+
+    allDocs = map(lambda file: get_text_from_file(file), allDocs)
+
+    create_reports(allDocs)

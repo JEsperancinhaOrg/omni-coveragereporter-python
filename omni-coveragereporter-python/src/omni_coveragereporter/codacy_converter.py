@@ -25,7 +25,7 @@ class Language(Enum):
             return "js"
 
 
-def convert_coverage(data):
+def convert_coverage_py(data):
     data_files = data['files']
     total_covered = sum(map(lambda fn: len(data_files[fn]['executed_lines']), data_files))
     total_lines = sum(map(lambda fn: len(data_files[fn]['executed_lines']) + len(
