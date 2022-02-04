@@ -95,6 +95,15 @@ sudo pip install omni_coveragereporter
 
 ---
 
+## Test files
+
+In all Omni projects, there are test files scattered all over the place. This is needed to see how the application behaves in different test scenarios. To keep things organized, this is the list of the files that are here specifically for test purposes:
+
+- [coverage.out](./coverage.out)
+- [points](./points)
+
+---
+
 ## References
 
 -   [Codecov Report Upload](https://docs.codecov.com/reference/upload)
