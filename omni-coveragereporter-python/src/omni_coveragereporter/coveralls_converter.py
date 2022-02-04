@@ -4,6 +4,7 @@ import os
 import git
 
 import common
+import coveragego_parser
 import coveragepy_parser
 
 repo = git.Repo(os.getcwd())
@@ -20,12 +21,11 @@ def merge_coverage(existing_file, source_file):
     return target
 
 
-def convert_coverage_py(data, report=None):
+def create_coveralls_common(report):
     if report:
         coveralls_files = report['source_files']
         coveralls_report = report
     else:
-        coveralls_files = {}
         coveralls_report = {
             'repo_token': os.getenv('COVERALLS_REPO_TOKEN'),
             'service_name': 'local-ci'}
@@ -44,7 +44,13 @@ def convert_coverage_py(data, report=None):
             'remotes': remotes
         }
         coveralls_report['git'] = git_repo
-        coveralls_report['source_files'] = []
+        coveralls_files = []
+        coveralls_report['source_files'] = coveralls_files
+    return coveralls_files, coveralls_report
+
+
+def convert_coverage_py(data, report=None):
+    coveralls_files, coveralls_report = create_coveralls_common(report)
     source_files = coveralls_report['source_files']
     for file_name in data['files']:
         if common.valid(file_name):
@@ -74,5 +80,38 @@ def convert_coverage_py(data, report=None):
     return coveralls_report
 
 
-def convert_coverage_go(data_text, coveralls_report):
+def convert_coverage_go(data_text, report=None):
+    coveralls_files, coveralls_report = create_coveralls_common(report)
+
+    all_lines = data_text.split("\n")
+    for i in range(1, len(all_lines)):
+        coverage_line = all_lines[i]
+        if len(coverage_line) > coveragego_parser.MINIMAL_STATS_LENGTH:
+            file_stats = coverage_line.split(":")
+            absolute_file_name = file_stats[0]
+            report_file_name = absolute_file_name.replace(os.getcwd(), '')
+            total_lines = coveragego_parser.total_lines(absolute_file_name)
+            filter_result = list(filter(lambda file: file['name'] == report_file_name, coveralls_files))
+            current_file_object = filter_result[0] if len(filter_result) > 0 else None
+            if current_file_object is None:
+                line_coverage = [None] * total_lines
+                text_file = open(absolute_file_name, "r")
+                file_content_bytes = text_file.read().encode('utf-8')
+                current_file_object = {
+                    'name': report_file_name,
+                    'source_digest': hashlib.md5(file_content_bytes).hexdigest(),
+                    "coverage": line_coverage
+                }
+                coveralls_files.append(current_file_object)
+
+            coverage_lines = current_file_object['coverage']
+            branch_line = file_stats[1].split(",")
+            go_line_coverage = branch_line[1]
+            line = go_line_coverage.split(".")[0]
+            hits = go_line_coverage.split(" ")[2]
+            back = int(go_line_coverage.split(" ")[1])
+            coveragego_parser.merge(coverage_lines, int(line) - 1, int(hits))
+            for i_back in range(1, back):
+                coveragego_parser.merge(coverage_lines, int(line) - i_back - 1, hits)
+
     return coveralls_report

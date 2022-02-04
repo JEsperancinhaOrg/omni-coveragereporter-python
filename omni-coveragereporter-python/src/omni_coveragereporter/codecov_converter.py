@@ -4,8 +4,6 @@ import common
 import coveragego_parser
 import coveragepy_parser
 
-MINIMAL_STATS_LENGTH = 14
-
 
 def convert_coverage_py(data, report=None):
     if report:
@@ -46,7 +44,7 @@ def convert_coverage_go(data_text, report=None):
 
     for i in range(1, len(all_lines)):
         coverage_line = all_lines[i]
-        if len(coverage_line) > MINIMAL_STATS_LENGTH:
+        if len(coverage_line) > coveragego_parser.MINIMAL_STATS_LENGTH:
             file_stats = coverage_line.split(":")
             absolute_file_name = file_stats[0]
             report_file_name = absolute_file_name.replace(os.getcwd(), '')
