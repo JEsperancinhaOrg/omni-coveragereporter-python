@@ -14,6 +14,7 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: .
+        key: ${{ runner.os }}-omni
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
