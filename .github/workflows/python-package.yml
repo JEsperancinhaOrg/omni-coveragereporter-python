@@ -26,7 +26,7 @@ jobs:
         pip3 install GitPython &&
         pip3 install requests
     - name: Generate Reports
-      run: coverage run --source=omni-coveragereporter-python -m pytest && coverage json
+      run: coverage run --source=omni-coveragereporter-python -m pytest -v && coverage json
     - name: Send reports
       run: python3 omni-coveragereporter-python/src/omni_coveragereporter/omni_coveragereporter_python.py
       env:
