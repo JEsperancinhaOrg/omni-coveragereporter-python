@@ -36,7 +36,7 @@ def create_reports(all_report_texts):
         if codecov_token is not None:
             print("Processing Codecov reports...")
             if is_coverage_py(data_text):
-                codecov_report = codecov_converter.convert_coverage_py(json.load(data_text), codecov_report)
+                codecov_report = codecov_converter.convert_coverage_py(json.loads(data_text), codecov_report)
             elif is_coverage_go(data_text):
                 codecov_report = codecov_converter.convert_coverage_go(data_text, codecov_report)
         else:
@@ -46,7 +46,7 @@ def create_reports(all_report_texts):
         if coveralls_token is not None:
             print("Processing Coveralls reports...")
             if is_coverage_py(data_text):
-                coveralls_report = coveralls_converter.convert_coverage_py(json.load(data_text), coveralls_report)
+                coveralls_report = coveralls_converter.convert_coverage_py(json.loads(data_text), coveralls_report)
             elif is_coverage_go(data_text):
                 coveralls_report = coveralls_converter.convert_coverage_go(data_text, coveralls_report)
         else:
@@ -56,7 +56,7 @@ def create_reports(all_report_texts):
         if codacy_token is not None:
             print("Processing Codacy reports...")
             if is_coverage_py(data_text):
-                codacy_report.append(codacy_converter.convert_coverage_py(json.load(data_text)))
+                codacy_report.append(codacy_converter.convert_coverage_py(json.loads(data_text)))
             elif is_coverage_go(data_text):
                 convert_coverage_go = codacy_converter.convert_coverage_go(data_text)
                 if convert_coverage_go:
