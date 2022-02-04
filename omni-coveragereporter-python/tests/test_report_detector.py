@@ -5,6 +5,7 @@ from omni_coveragereporter_python import get_text_from_file
 from report_detector import is_coverage_go
 from report_detector import is_coverage_py
 
+sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('../src/omni_coveragereporter'))
 sys.path.insert(0, os.path.abspath('omni-coveragereporter-python/src/omni_coveragereporter'))
 sys.path.insert(0, os.path.abspath('src/omni_coveragereporter'))
