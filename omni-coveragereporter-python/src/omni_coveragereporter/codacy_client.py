@@ -15,16 +15,16 @@ def send_report(reports_pack):
         'Content-Type': 'application/json',
         'project-token': os.getenv('CODACY_PROJECT_TOKEN'),
     }
-    if len(reports_pack.values()) == 1:
-        effective_url = f'{url}/2.0/coverage/{commit}/{reports_pack.values[0].capitalized()}?partial=false'
+    if len(reports_pack.values()) == 1 and len(reports_pack.values()[0]) == 1:
+        effective_url = f'{url}/2.0/coverage/{commit}/{reports_pack.keys()[0]}?partial=false'
         print(f"- Sending Codacy report to {effective_url}")
-        r = requests.post(url=effective_url, headers=headers, data=reports_pack.values[0])
+        r = requests.post(url=effective_url, headers=headers, data=reports_pack.values()[0][0])
         return r.content.decode("utf-8")
     else:
         for lang in reports_pack.keys():
             effective_url = f'{url}/2.0/coverage/{commit}/{lang}?partial=true'
             print(f"- Sending Codacy report to {effective_url}")
-            for report in reports_pack.values():
+            for report in reports_pack[lang]:
                 print(report)
                 r = requests.post(url=effective_url, headers=headers, data=report)
                 print("- Codacy Report sent!")

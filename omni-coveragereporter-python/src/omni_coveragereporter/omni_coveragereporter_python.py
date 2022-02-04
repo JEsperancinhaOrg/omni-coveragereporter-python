@@ -57,11 +57,17 @@ def create_reports(all_report_texts):
             print("Processing Codacy reports...")
             if is_coverage_py(data_text):
                 py_report = codacy_converter.convert_coverage_py(json.loads(data_text))
-                codacy_reports[codacy_converter.Language.PYTHON.capitalized()] = py_report
+                python_lang = codacy_converter.Language.PYTHON.capitalized()
+                if codacy_reports[python_lang] is None:
+                    codacy_reports[python_lang] = []
+                codacy_reports[python_lang].append(py_report)
             elif is_coverage_go(data_text):
                 go_report = codacy_converter.convert_coverage_go(data_text)
+                go_lang = codacy_converter.Language.GO.capitalized()
+                if codacy_reports[go_lang] is None:
+                    codacy_reports[go_lang] = []
                 if go_report is not None:
-                    codacy_reports[codacy_converter.Language.GO.capitalized()] = go_report
+                    codacy_reports[go_lang].append(go_report)
         else:
             print("* CODACY_PROJECT_TOKEN not configured.")
 
