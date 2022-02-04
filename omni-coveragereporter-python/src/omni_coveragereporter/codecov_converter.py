@@ -63,6 +63,6 @@ def convert_coverage_go(data_text, report=None):
             back = int(line_coverage.split(" ")[1])
             codecov_file[line] = int(hits)
             for i_back in range(1, back):
-                codecov_file[str(int(line) - i_back)] = hits
+                codecov_file[str(int(line) - i_back)] = int(hits)
 
     return codecov_report

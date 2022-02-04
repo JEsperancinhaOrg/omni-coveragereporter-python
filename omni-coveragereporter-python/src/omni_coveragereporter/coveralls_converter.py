@@ -82,7 +82,8 @@ def convert_coverage_py(data, report=None):
 
 def convert_coverage_go(data_text, report=None):
     coveralls_files, coveralls_report = create_coveralls_common(report)
-
+    total_lines = 0
+    total_coverage = 0
     all_lines = data_text.split("\n")
     for i in range(1, len(all_lines)):
         coverage_line = all_lines[i]
@@ -114,6 +115,6 @@ def convert_coverage_go(data_text, report=None):
             back = int(go_line_coverage.split(" ")[1])
             coveragego_parser.merge(coverage_lines, int(line) - 1, int(hits))
             for i_back in range(1, back):
-                coveragego_parser.merge(coverage_lines, int(line) - i_back - 1, hits)
+                coveragego_parser.merge(coverage_lines, int(line) - i_back - 1, int(hits))
 
     return coveralls_report

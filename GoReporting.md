@@ -56,7 +56,7 @@ mode: set
 This is a fairly complicated format and in order to read it, this is what I'm doing in this plugin:
 
 1. Ignore all percentages - It doesn't look like any of the reporting frameworks will need them specifically and we can and should calculate them separately
-2. All non-considered lines should fall back to their non-cover-able value (frequently just null or omission of the line number for coverage)
+2. All non-considered lines should fall back to their non-cover-able value (frequently just null or omission of the line number for coverage or also just `0`)
 3. The number of hits should be given directly at the specified line number (0 and >0 values alike in the same way)
 4. Per line hit, add the rest of the line coverage upwards until N-1.
 
