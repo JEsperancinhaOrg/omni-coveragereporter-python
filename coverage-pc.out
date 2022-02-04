@@ -1,0 +1,12 @@
+mode: set
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/main.go:10.13,16.2 4 0
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/main.go:18.56,35.2 14 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:13.70,19.2 4 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:24.112,30.33 6 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:39.2,39.51 1 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:30.33,31.34 1 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:31.34,37.4 5 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:42.65,48.33 5 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:53.2,53.19 1 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:48.33,49.34 1 1
+/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/pearson-correlation-coefficient/pearson.go:49.34,51.4 1 1
