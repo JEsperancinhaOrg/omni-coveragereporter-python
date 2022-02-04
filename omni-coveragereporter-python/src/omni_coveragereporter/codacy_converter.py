@@ -1,6 +1,7 @@
 from enum import Enum
 import common
 
+
 class Language(Enum):
     JAVA = 1
     KOTLIN = 2

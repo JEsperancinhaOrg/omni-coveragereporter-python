@@ -9,8 +9,8 @@ import codecov_client
 import codecov_converter
 import coveralls_client
 import coveralls_converter
-from report_detector import is_coverage_py
 from report_detector import is_coverage_go
+from report_detector import is_coverage_py
 
 banner = """
   ______   .___  ___. .__   __.  __     .______       _______ .______     ______   .______     .___________. _______ .______
@@ -58,7 +58,9 @@ def create_reports(all_report_texts):
             if is_coverage_py(data_text):
                 codacy_report.append(codacy_converter.convert_coverage_py(json.load(data_text)))
             elif is_coverage_go(data_text):
-                codacy_report.append(codacy_converter.convert_coverage_go(data_text))
+                convert_coverage_go = codacy_converter.convert_coverage_go(data_text)
+                if convert_coverage_go:
+                    codacy_report.append(convert_coverage_go)
         else:
             print("* CODACY_PROJECT_TOKEN not configured.")
 
@@ -70,7 +72,7 @@ def create_reports(all_report_texts):
         print(coveralls_client.send_report(json.dumps(coveralls_report)))
         print("Coveralls reporting complete!")
 
-    if codacy_report is not None:
+    if len(codacy_report) > 0:
         print(codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON))
         print("Codacy reporting complete!")
 

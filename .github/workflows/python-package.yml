@@ -28,7 +28,7 @@ jobs:
     - name: Generate Reports
       run: coverage run --source=omni-coveragereporter-python -m pytest && coverage json
     - name: Send reports
-      run: omni_coveragereporter_python.py
+      run: python3 omni-coveragereporter-python/src/omni_coveragereporter/omni_coveragereporter_python.py
       env:
          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}

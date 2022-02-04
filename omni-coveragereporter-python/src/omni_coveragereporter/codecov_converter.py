@@ -30,4 +30,4 @@ def convert_coverage_py(data, report=None):
 
 
 def convert_coverage_go(data_text, codecov_report):
-    return None
+    return codecov_report
