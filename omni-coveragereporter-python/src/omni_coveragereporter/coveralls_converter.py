@@ -90,6 +90,8 @@ def convert_coverage_go(data_text, report=None):
             file_stats = coverage_line.split(":")
             absolute_file_name = file_stats[0]
             report_file_name = absolute_file_name.replace(os.getcwd(), '')
+            if report_file_name.startswith("/"):
+                report_file_name = report_file_name[1:]
             total_lines = coveragego_parser.total_lines(absolute_file_name)
             filter_result = list(filter(lambda file: file['name'] == report_file_name, coveralls_files))
             current_file_object = filter_result[0] if len(filter_result) > 0 else None
