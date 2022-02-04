@@ -35,7 +35,6 @@ def create_reports(all_report_texts):
         codecov_token = os.getenv('CODECOV_TOKEN')
         if codecov_token is not None:
             print("Processing Codecov reports...")
-            print(data_text)
             if is_coverage_py(data_text):
                 codecov_report = codecov_converter.convert_coverage_py(json.loads(data_text), codecov_report)
             elif is_coverage_go(data_text):
