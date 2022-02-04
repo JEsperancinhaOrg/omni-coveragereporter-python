@@ -39,7 +39,7 @@ You can find a working example on these projects:
 | Type             | Status | Notes                                                          | Available from Release | Example Project                                                                                                                                                                         |
 |------------------|--------|----------------------------------------------------------------|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Coverage Py JSON | ✅      | Coverage PY JSON file(s) must be generated in the root folder  | 0.0.0                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)           |
-| Coverage GoLang  | ✅      | Coverage files created by Go                                   | 0.0.1                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Multi%20Image%20Comparer%20🏞&color=informational)](https://github.com/jesperancinha/multi-image-comparer)  |
+| Coverage GoLang  | ✅      | Coverage files created by Go                                   | 0.0.2                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Multi%20Image%20Comparer%20🏞&color=informational)](https://github.com/jesperancinha/multi-image-comparer)  |
 
 #### 2. Online API's supported
 
@@ -78,7 +78,7 @@ cd omni-coveragereporter-python
 
 python3 setup.py sdist
 
-pip3 install dist/omni_coveragereporter-0.0.1.tar.gz
+pip3 install dist/omni_coveragereporter-0.0.2.tar.gz
 
 pip3 uninstall omni_coveragereporter
 
