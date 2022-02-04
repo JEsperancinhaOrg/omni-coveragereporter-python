@@ -1,3 +1,4 @@
+import json
 import os
 
 import git
@@ -20,7 +21,7 @@ def send_report(reports_pack):
     if len(reports_pack_keys) == 1 and len(reports_pack[first_key]) == 1:
         effective_url = f'{url}/2.0/coverage/{commit}/{first_key}?partial=false'
         print(f"- Sending Codacy report to {effective_url}")
-        r = requests.post(url=effective_url, headers=headers, data=reports_pack[first_key][0])
+        r = requests.post(url=effective_url, headers=headers, data=json.dumps(reports_pack[first_key][0]))
         return r.content.decode("utf-8")
     else:
         for lang in reports_pack_keys:
@@ -28,7 +29,7 @@ def send_report(reports_pack):
             print(f"- Sending Codacy report to {effective_url}")
             for report in reports_pack[lang]:
                 print(report)
-                r = requests.post(url=effective_url, headers=headers, data=report)
+                r = requests.post(url=effective_url, headers=headers, data=json.dumps(report))
                 print("- Codacy Report sent!")
                 print(f"- {r.content.decode('utf-8')}")
         effective_final_url = f'{url}/2.0/commit/{commit}/coverageFinal'
