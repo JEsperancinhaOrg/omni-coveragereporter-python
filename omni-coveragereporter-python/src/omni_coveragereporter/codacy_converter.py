@@ -86,7 +86,8 @@ def convert_coverage_go(data_text):
                     line_coverage[str(line)] = 0
                 current_file_object = {
                     'filename': report_file_name,
-                    "coverage": line_coverage
+                    'total': 0,
+                    'coverage': line_coverage
                 }
                 file_reports.append(current_file_object)
 
