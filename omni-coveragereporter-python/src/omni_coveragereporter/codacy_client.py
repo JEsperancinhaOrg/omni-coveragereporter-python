@@ -29,8 +29,8 @@ def send_report(reports_pack):
                 r = requests.post(url=effective_url, headers=headers, data=report)
                 print("- Codacy Report sent!")
                 print(f"- {r.content.decode('utf-8')}")
-            effective_final_url = f'{url}/2.0/commit/{commit}/coverageFinal'
-            print(f"- Sending Final Codacy report to {effective_final_url}")
-            final_response = requests.post(url=effective_final_url, headers=headers, json="")
-            final_response.content.decode("utf-8")
+        effective_final_url = f'{url}/2.0/commit/{commit}/coverageFinal'
+        print(f"- Sending Final Codacy report to {effective_final_url}")
+        final_response = requests.post(url=effective_final_url, headers=headers, json="")
+        final_response.content.decode("utf-8")
     return None
