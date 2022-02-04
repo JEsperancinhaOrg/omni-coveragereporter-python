@@ -57,7 +57,7 @@ python3 omni_coveragereporter_python.py
 
 ```shell
 coverage run --source=omni-coveragereporter-python -m pytest
-
+coverage run --source=omni-coveragereporter-python -m pytest  --capture=no 
 coverage report -m
 
 coverage html
