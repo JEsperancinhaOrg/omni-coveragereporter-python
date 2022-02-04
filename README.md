@@ -23,7 +23,8 @@
 
 ## Intro
 
-I created this plugin to support my exclusive Python projects. This is a spin-off project from the original one I've created to support my maven projects on [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=omni-coveragereporter-maven-plugin&color=informational)](https://github.com/JEsperancinhaOrg/omni-reporter-maven-plugin).
+I created this plugin to support my exclusive Python projects. This is a spin-off project from the original one I've created to support my maven projects
+on [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=omni-coveragereporter-maven-plugin&color=informational)](https://github.com/JEsperancinhaOrg/omni-reporter-maven-plugin).
 
 Current version is very limited by comparison and not much is configurable.
 
@@ -31,21 +32,20 @@ You can find a working example on this project: [![Generic badge](https://img.sh
 
 ## Features
 
-#### 1.  Reporting file supported
+#### 1. Reporting file supported
 
 | Type             | Status | Notes                                                          | Available from Release | Example Project                                                                                                                                                                         |
 |------------------|--------|----------------------------------------------------------------|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Coverage Py JSON | ✅      | Coverage PY JSON file(s) must be generated in the root folder  | 0.0.0                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)           |
 | Coverage GoLang  | 🚧     | Coverage files created by Go                                   | ?                      | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Multi%20Image%20Comparer%20🏞&color=informational)](https://github.com/jesperancinha/multi-image-comparer)  |
 
-#### 2.  Online API's supported
+#### 2. Online API's supported
 
 | Type       | Status | Notes | Environment Variables                                                                                                                                                                                     | Available from Release |
 |------------|--------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
 | Coveralls  | ✅     |       | `COVERALLS_REPO_TOKEN` or `COVERALLS_TOKEN`                                                                                                                                                               | 0.0.0                  |
 | Codacy     | ✅      |       | `CODACY_PROJECT_TOKEN`                                                                                                                                                                                    | 0.0.0                  |
 | CodeCov    | ✅      |       | `CODECOV_TOKEN`                                                                                                                                                                                           | 0.0.0                  |
-
 
 ## Run Locally
 
@@ -101,24 +101,31 @@ In all Omni projects, there are test files scattered all over the place. This is
 
 - [coverage.out](./coverage.out)
 - [points](./points)
+- [reports](./reports)
 
 ---
 
 ## References
 
--   [Codecov Report Upload](https://docs.codecov.com/reference/upload)
--   [Codacy Coverage Reporter](https://github.com/codacy/codacy-coverage-reporter)
--   [Jackson Module](https://medium.com/@foxjstephen/how-to-actually-parse-xml-in-java-kotlin-221a9309e6e8)
--   [XCode Environment Variable Reference](https://developer.apple.com/documentation/xcode/environment-variable-reference)
--   [Cross-CI reference](https://github.com/streamich/cross-ci)
--   [Coveralls API reference](https://docs.coveralls.io/api-reference)
--   [Git Hub Environment Variables](https://docs.github.com/en/actions/learn-github-actions/environment-variables)
--   [Git Lab Environment Variables](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
--   [Check Run Reporter](https://github.com/marketplace/check-run-reporter)
--   [Codacy Maven Plugin](https://github.com/halkeye/codacy-maven-plugin)
--   [Coveralls Maven Plugin](https://github.com/trautonen/coveralls-maven-plugin)
--   [Example Java Maven for CodeCov](https://github.com/codecov/example-java-maven)
--   [CodeCov Maven Plugin](https://github.com/alexengrig/codecov-maven-plugin)
+- [Codecov Report Upload](https://docs.codecov.com/reference/upload)
+- [Codacy Coverage Reporter](https://github.com/codacy/codacy-coverage-reporter)
+- [Jackson Module](https://medium.com/@foxjstephen/how-to-actually-parse-xml-in-java-kotlin-221a9309e6e8)
+- [XCode Environment Variable Reference](https://developer.apple.com/documentation/xcode/environment-variable-reference)
+- [Cross-CI reference](https://github.com/streamich/cross-ci)
+- [Coveralls API reference](https://docs.coveralls.io/api-reference)
+- [Git Hub Environment Variables](https://docs.github.com/en/actions/learn-github-actions/environment-variables)
+- [Git Lab Environment Variables](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
+- [Check Run Reporter](https://github.com/marketplace/check-run-reporter)
+- [Codacy Maven Plugin](https://github.com/halkeye/codacy-maven-plugin)
+- [Coveralls Maven Plugin](https://github.com/trautonen/coveralls-maven-plugin)
+- [Example Java Maven for CodeCov](https://github.com/codecov/example-java-maven)
+- [CodeCov Maven Plugin](https://github.com/alexengrig/codecov-maven-plugin)
+
+## Buy me a coffee
+
+I hope you enjoyed this repository. If you did, you can optionally please buy me a coffee, which supports me in constantly improve and make new free content regularly for everyone. Thank you so much!
+
+[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=jesperancinha&button_colour=046c46&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00 "title")](https://www.buymeacoffee.com/jesperancinha)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
