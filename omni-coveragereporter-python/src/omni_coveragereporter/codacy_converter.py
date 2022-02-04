@@ -60,7 +60,10 @@ def convert_coverage_py(data):
 
 def convert_coverage_go(data_text):
     file_reports = []
-    codacy_report = {'fileReports': file_reports}
+    codacy_report = {
+        'total': 0,
+        'fileReports': file_reports
+    }
     all_lines = data_text.split("\n")
     total_lines = 0
     total_coverage = 0
