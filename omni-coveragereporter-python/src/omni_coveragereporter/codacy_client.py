@@ -28,7 +28,6 @@ def send_report(reports_pack):
             effective_url = f'{url}/2.0/coverage/{commit}/{lang}?partial=true'
             print(f"- Sending Codacy report to {effective_url}")
             for report in reports_pack[lang]:
-                print(report)
                 r = requests.post(url=effective_url, headers=headers, data=json.dumps(report))
                 print("- Codacy Report sent!")
                 print(f"- {r.content.decode('utf-8')}")
