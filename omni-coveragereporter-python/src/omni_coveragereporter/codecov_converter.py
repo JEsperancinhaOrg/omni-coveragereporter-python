@@ -2,7 +2,7 @@ import common
 import coveragepy_parser
 
 
-def convert_coverage(data, report=None):
+def convert_coverage_py(data, report=None):
     if report:
         codecov_files = report['coverage']
         codecov_report = report
@@ -27,3 +27,7 @@ def convert_coverage(data, report=None):
                 if codecov_file[str(i)] is None:
                     codecov_file[str(i)] = 0 if i in file_object['missing_lines'] else None
     return codecov_report
+
+
+def convert_coverage_go(data_text, codecov_report):
+    return None

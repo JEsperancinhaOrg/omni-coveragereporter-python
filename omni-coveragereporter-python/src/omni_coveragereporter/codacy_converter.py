@@ -49,3 +49,7 @@ def convert_coverage_py(data):
             codacy_file_reports.append(codacy_file_report)
             codacy_file_report['coverage'] = line_coverage
     return codacy_report
+
+
+def convert_coverage_go(data_text):
+    return None

@@ -20,7 +20,7 @@ def merge_coverage(existing_file, source_file):
     return target
 
 
-def convert_coverage(data, report=None):
+def convert_coverage_py(data, report=None):
     if report:
         coveralls_files = report['source_files']
         coveralls_report = report
@@ -72,3 +72,7 @@ def convert_coverage(data, report=None):
                 existing_file['coverage'] = merge_coverage(existing_file, source_file)
 
     return coveralls_report
+
+
+def convert_coverage_go(data_text, coveralls_report):
+    return None
