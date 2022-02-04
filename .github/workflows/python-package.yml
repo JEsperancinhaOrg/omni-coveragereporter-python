@@ -28,7 +28,8 @@ jobs:
         pip3 install coverage &&
         pip3 install pytest &&
         pip3 install GitPython &&
-        pip3 install requests
+        pip3 install requests &&
+        sed -i 's+${test}+'$(pwd)'/reports+g' coverage.out
     - name: Generate Reports
       run: coverage run --source=omni-coveragereporter-python -m pytest -v && coverage json
     - name: Send reports
