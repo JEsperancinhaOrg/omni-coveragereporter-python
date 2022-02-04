@@ -16,6 +16,8 @@ def send_report(reports_pack):
         'Content-Type': 'application/json',
         'project-token': os.getenv('CODACY_PROJECT_TOKEN'),
     }
+    print("DDDSDDDDD")
+    print(reports_pack)
     reports_pack_keys = reports_pack.keys()
     first_key = reports_pack_keys.head()
     if len(reports_pack_keys) == 1 and len(reports_pack[first_key]) == 1:
