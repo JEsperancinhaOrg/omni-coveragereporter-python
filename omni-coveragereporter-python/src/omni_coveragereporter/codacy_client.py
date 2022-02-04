@@ -17,7 +17,7 @@ def send_report(reports_pack):
         'project-token': os.getenv('CODACY_PROJECT_TOKEN'),
     }
     reports_pack_keys = reports_pack.keys()
-    first_key = reports_pack_keys[0]
+    first_key = reports_pack_keys.head()
     if len(reports_pack_keys) == 1 and len(reports_pack[first_key]) == 1:
         effective_url = f'{url}/2.0/coverage/{commit}/{first_key}?partial=false'
         print(f"- Sending Codacy report to {effective_url}")
