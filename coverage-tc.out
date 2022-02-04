@@ -1,7 +1,7 @@
 mode: set
-/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/tanimoto-correlation-coefficient/main.go:10.13,16.2 4 0
-/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/tanimoto-correlation-coefficient/main.go:18.56,35.2 14 1
-/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/tanimoto-correlation-coefficient/tanimoto.go:16.70,22.33 6 1
-/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/tanimoto-correlation-coefficient/tanimoto.go:32.2,32.48 1 1
-/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/tanimoto-correlation-coefficient/tanimoto.go:22.33,23.34 1 1
-/Users/jofisaes/dev/src/jofisaes/multi-image-comparer/tanimoto-correlation-coefficient/tanimoto.go:23.34,30.4 5 1
+${test}/tanimoto-correlation-coefficient/main.go:10.13,16.2 4 0
+${test}/tanimoto-correlation-coefficient/main.go:18.56,35.2 14 1
+${test}/tanimoto-correlation-coefficient/tanimoto.go:16.70,22.33 6 1
+${test}/tanimoto-correlation-coefficient/tanimoto.go:32.2,32.48 1 1
+${test}/tanimoto-correlation-coefficient/tanimoto.go:22.33,23.34 1 1
+${test}/tanimoto-correlation-coefficient/tanimoto.go:23.34,30.4 5 1
