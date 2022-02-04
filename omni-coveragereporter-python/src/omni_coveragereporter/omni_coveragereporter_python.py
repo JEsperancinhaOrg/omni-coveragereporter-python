@@ -59,8 +59,8 @@ def create_reports(all_report_texts):
                 codacy_reports.append(codacy_converter.convert_coverage_py(json.loads(data_text)))
             elif is_coverage_go(data_text):
                 convert_coverage_go = codacy_converter.convert_coverage_go(data_text)
-                # if convert_coverage_go is not None:
-                #     codacy_reports.append(convert_coverage_go)
+                if convert_coverage_go is not None:
+                    codacy_reports.append(convert_coverage_go)
         else:
             print("* CODACY_PROJECT_TOKEN not configured.")
 
@@ -73,7 +73,7 @@ def create_reports(all_report_texts):
         print("Coveralls reporting complete!")
 
     if len(codacy_reports) > 0:
-        print(codacy_client.send_report(map(lambda r: json.dumps(r), codacy_reports), codacy_converter.Language.PYTHON))
+        print(codacy_client.send_report(list(map(lambda r: json.dumps(r), codacy_reports)), codacy_converter.Language.PYTHON))
         print("Codacy reporting complete!")
 
 
