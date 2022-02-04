@@ -78,7 +78,7 @@ cd omni-coveragereporter-python
 
 python3 setup.py sdist
 
-pip3 install dist/omni_coveragereporter-0.0.0.tar.gz
+pip3 install dist/omni_coveragereporter-0.0.1.tar.gz
 
 pip3 uninstall omni_coveragereporter
 

@@ -24,7 +24,7 @@ setup(
         'src/omni_coveragereporter/coveralls_converter.py',
         'src/omni_coveragereporter/common.py',
     ],
-    version='0.0.0',
+    version='0.0.1',
     description='Omni Coverage Reporter. Strives to be as universal as possible in receiving, converting and sending reports from many types to different online API''s',
     author='João Esperancinha',
     author_email='jofisaes@gmail.com',
