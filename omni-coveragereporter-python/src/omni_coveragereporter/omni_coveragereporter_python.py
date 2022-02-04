@@ -59,8 +59,8 @@ def create_reports(all_report_texts):
                 codacy_reports.append(codacy_converter.convert_coverage_py(json.loads(data_text)))
             elif is_coverage_go(data_text):
                 convert_coverage_go = codacy_converter.convert_coverage_go(data_text)
-                if convert_coverage_go is not None:
-                    codacy_reports.append(convert_coverage_go)
+                # if convert_coverage_go is not None:
+                #     codacy_reports.append(convert_coverage_go)
         else:
             print("* CODACY_PROJECT_TOKEN not configured.")
 
