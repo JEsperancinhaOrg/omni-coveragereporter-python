@@ -16,6 +16,7 @@ def test_capitalized():
     assert codacy_converter.Language.SCALA.capitalized() == 'Scala'
     assert codacy_converter.Language.PYTHON.capitalized() == 'Python'
     assert codacy_converter.Language.JAVA_SCRIPT.capitalized() == 'JavaScript'
+    assert codacy_converter.Language.GO.capitalized() == 'Go'
 
 
 def test_convert_coverage_go():

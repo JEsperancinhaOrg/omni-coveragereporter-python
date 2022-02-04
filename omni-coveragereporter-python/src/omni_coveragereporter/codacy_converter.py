@@ -11,6 +11,7 @@ class Language(Enum):
     SCALA = 3
     PYTHON = 4
     JAVA_SCRIPT = 5
+    GO = 6
 
     def capitalized(self):
         name = self.name
@@ -27,6 +28,8 @@ class Language(Enum):
             return "py"
         if self is Language.JAVA_SCRIPT:
             return "js"
+        if self is Language.GO:
+            return "go"
 
 
 def convert_coverage_py(data):
