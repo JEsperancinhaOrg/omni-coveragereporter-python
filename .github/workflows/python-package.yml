@@ -29,8 +29,8 @@ jobs:
         pip3 install pytest &&
         pip3 install GitPython &&
         pip3 install requests &&
-        sed -i 's+${test}+'$(pwd)'/points+g' coverage.out
-        sed -i 's+${test}+'$(pwd)'/pearson-correlation-coefficient+g' coverage-pc.out
+        sed -i 's+${test}+'$(pwd)'/points+g' coverage.out &&
+        sed -i 's+${test}+'$(pwd)'/pearson-correlation-coefficient+g' coverage-pc.out &&
         sed -i 's+${test}+'$(pwd)'/tanimoto-correlation-coefficient+g' coverage-tc.out
     - name: Generate Reports
       run: coverage run --source=omni-coveragereporter-python -m pytest -v && coverage json
