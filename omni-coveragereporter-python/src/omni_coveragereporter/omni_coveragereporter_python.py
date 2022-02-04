@@ -73,7 +73,7 @@ def create_reports(all_report_texts):
         print("Coveralls reporting complete!")
 
     if len(codacy_report) > 0:
-        print(codacy_client.send_report([json.dumps(codacy_report)], codacy_converter.Language.PYTHON))
+        print(codacy_client.send_report(map(lambda r: json.dumps(r), codacy_report), codacy_converter.Language.PYTHON))
         print("Codacy reporting complete!")
 
 
