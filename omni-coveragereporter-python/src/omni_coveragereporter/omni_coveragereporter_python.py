@@ -28,7 +28,7 @@ by João Esperancinha
 
 def create_reports(all_report_texts):
     print(banner)
-    codacy_report = []
+    codacy_reports = []
     codecov_report = None
     coveralls_report = None
     for data_text in all_report_texts:
@@ -56,11 +56,11 @@ def create_reports(all_report_texts):
         if codacy_token is not None:
             print("Processing Codacy reports...")
             if is_coverage_py(data_text):
-                codacy_report.append(codacy_converter.convert_coverage_py(json.loads(data_text)))
+                codacy_reports.append(codacy_converter.convert_coverage_py(json.loads(data_text)))
             elif is_coverage_go(data_text):
                 convert_coverage_go = codacy_converter.convert_coverage_go(data_text)
-                if convert_coverage_go:
-                    codacy_report.append(convert_coverage_go)
+                if convert_coverage_go is not None:
+                    codacy_reports.append(convert_coverage_go)
         else:
             print("* CODACY_PROJECT_TOKEN not configured.")
 
@@ -72,8 +72,8 @@ def create_reports(all_report_texts):
         print(coveralls_client.send_report(json.dumps(coveralls_report)))
         print("Coveralls reporting complete!")
 
-    if len(codacy_report) > 0:
-        print(codacy_client.send_report(map(lambda r: json.dumps(r), codacy_report), codacy_converter.Language.PYTHON))
+    if len(codacy_reports) > 0:
+        print(codacy_client.send_report(map(lambda r: json.dumps(r), codacy_reports), codacy_converter.Language.PYTHON))
         print("Codacy reporting complete!")
 
 
