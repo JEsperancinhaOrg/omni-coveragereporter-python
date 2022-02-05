@@ -30,18 +30,18 @@ Current version is very limited by comparison and not much is configurable.
 
 You can find a working example on these projects: 
 
-1. [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)
+1.  [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)
 
 ## Features
 
-#### 1. Reporting file supported
+#### 1.  Reporting file supported
 
 | Type             | Status | Notes                                                          | Available from Release | Example Project                                                                                                                                                                         |
 |------------------|--------|----------------------------------------------------------------|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Coverage Py JSON | ✅      | Coverage PY JSON file(s) must be generated in the root folder  | 0.0.0                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Med%20Dicom%20Service🏥&color=informational)](https://github.com/jesperancinha/med_dicom_service)           |
 | Coverage GoLang  | ✅      | Coverage files created by Go                                   | 0.0.2                  | [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Multi%20Image%20Comparer%20🏞&color=informational)](https://github.com/jesperancinha/multi-image-comparer)  |
 
-#### 2. Online API's supported
+#### 2.  Online API's supported
 
 | Type       | Status | Notes | Environment Variables                                                                                                                                                                                     | Available from Release |
 |------------|--------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
@@ -101,31 +101,31 @@ sudo pip install omni_coveragereporter
 
 In all Omni projects, there are test files scattered all over the place. This is needed to see how the application behaves in different test scenarios. To keep things organized, this is the list of the files that are here specifically for test purposes:
 
-- [coverage.out](./coverage.out)
-- [coverage-pc.out](./coverage-pc.out)
-- [coverage-tc.out](./coverage-tc.out)
-- [pearson-correlation-coefficient](./pearson-correlation-coefficient)
-- [tanimoto-correlation-coefficient](./tanimoto-correlation-coefficient)
-- [points](./points)
-- [reports](./reports)
+-   [coverage.out](./coverage.out)
+-   [coverage-pc.out](./coverage-pc.out)
+-   [coverage-tc.out](./coverage-tc.out)
+-   [pearson-correlation-coefficient](./pearson-correlation-coefficient)
+-   [tanimoto-correlation-coefficient](./tanimoto-correlation-coefficient)
+-   [points](./points)
+-   [reports](./reports)
 
 ---
 
 ## References
 
-- [Codecov Report Upload](https://docs.codecov.com/reference/upload)
-- [Codacy Coverage Reporter](https://github.com/codacy/codacy-coverage-reporter)
-- [Jackson Module](https://medium.com/@foxjstephen/how-to-actually-parse-xml-in-java-kotlin-221a9309e6e8)
-- [XCode Environment Variable Reference](https://developer.apple.com/documentation/xcode/environment-variable-reference)
-- [Cross-CI reference](https://github.com/streamich/cross-ci)
-- [Coveralls API reference](https://docs.coveralls.io/api-reference)
-- [Git Hub Environment Variables](https://docs.github.com/en/actions/learn-github-actions/environment-variables)
-- [Git Lab Environment Variables](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
-- [Check Run Reporter](https://github.com/marketplace/check-run-reporter)
-- [Codacy Maven Plugin](https://github.com/halkeye/codacy-maven-plugin)
-- [Coveralls Maven Plugin](https://github.com/trautonen/coveralls-maven-plugin)
-- [Example Java Maven for CodeCov](https://github.com/codecov/example-java-maven)
-- [CodeCov Maven Plugin](https://github.com/alexengrig/codecov-maven-plugin)
+-   [Codecov Report Upload](https://docs.codecov.com/reference/upload)
+-   [Codacy Coverage Reporter](https://github.com/codacy/codacy-coverage-reporter)
+-   [Jackson Module](https://medium.com/@foxjstephen/how-to-actually-parse-xml-in-java-kotlin-221a9309e6e8)
+-   [XCode Environment Variable Reference](https://developer.apple.com/documentation/xcode/environment-variable-reference)
+-   [Cross-CI reference](https://github.com/streamich/cross-ci)
+-   [Coveralls API reference](https://docs.coveralls.io/api-reference)
+-   [Git Hub Environment Variables](https://docs.github.com/en/actions/learn-github-actions/environment-variables)
+-   [Git Lab Environment Variables](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
+-   [Check Run Reporter](https://github.com/marketplace/check-run-reporter)
+-   [Codacy Maven Plugin](https://github.com/halkeye/codacy-maven-plugin)
+-   [Coveralls Maven Plugin](https://github.com/trautonen/coveralls-maven-plugin)
+-   [Example Java Maven for CodeCov](https://github.com/codecov/example-java-maven)
+-   [CodeCov Maven Plugin](https://github.com/alexengrig/codecov-maven-plugin)
 
 ## Buy me a coffee
 
