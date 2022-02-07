@@ -63,6 +63,27 @@ def convert_coverage_go(data_text, report=None):
             back = int(line_coverage.split(" ")[1])
             codecov_file[line] = int(hits)
             for i_back in range(1, back):
-                codecov_file[str(int(line) - i_back)] = int(hits)
+                codecov_file[str(int(line) - i_back)] = hits
 
     return codecov_report
+
+
+def convert_clover(data_xml, report=None):
+    if report:
+        codecov_files = report['coverage']
+        codecov_report = report
+    else:
+        codecov_files = {}
+        codecov_report = {"coverage": codecov_files}
+
+    print("*****")
+    print(data_xml)
+    for project in data_xml.iter('project'):
+        print(project)
+        for file in project.iter('file'):
+            print(file)
+            for line in file.iter('line'):
+                print(line)
+    # print(data_xml.findAll('project'))
+
+    return None

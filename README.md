@@ -78,7 +78,7 @@ cd omni-coveragereporter-python
 
 python3 setup.py sdist
 
-pip3 install dist/omni_coveragereporter-0.0.2.tar.gz
+pip3 install dist/omni_coveragereporter-0.0.3.tar.gz
 
 pip3 uninstall omni_coveragereporter
 
@@ -101,13 +101,15 @@ sudo pip install omni_coveragereporter
 
 In all Omni projects, there are test files scattered all over the place. This is needed to see how the application behaves in different test scenarios. To keep things organized, this is the list of the files that are here specifically for test purposes:
 
--   [coverage.out](./coverage.out)
--   [coverage-pc.out](./coverage-pc.out)
--   [coverage-tc.out](./coverage-tc.out)
--   [pearson-correlation-coefficient](./pearson-correlation-coefficient)
--   [tanimoto-correlation-coefficient](./tanimoto-correlation-coefficient)
--   [points](./points)
--   [reports](./reports)
+- [coverage.out](./coverage.out)
+- [coverage-pc.out](./coverage-pc.out)
+- [coverage-tc.out](./coverage-tc.out)
+- [pearson-correlation-coefficient](./pearson-correlation-coefficient)
+- [tanimoto-correlation-coefficient](./tanimoto-correlation-coefficient)
+- [points](./points)
+- [reports](./reports)
+- [clover.xml](./clover.xml)
+- [src](./src)
 
 ---
 

@@ -118,3 +118,7 @@ def convert_coverage_go(data_text, report=None):
                 coveragego_parser.merge(coverage_lines, int(line) - i_back - 1, int(hits))
 
     return coveralls_report
+
+
+def convert_clover(data_text, coveralls_report):
+    return None

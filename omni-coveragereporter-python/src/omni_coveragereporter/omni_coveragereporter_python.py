@@ -9,8 +9,9 @@ import codecov_client
 import codecov_converter
 import coveralls_client
 import coveralls_converter
-from report_detector import is_coverage_go
+from report_detector import is_coverage_go, is_clover
 from report_detector import is_coverage_py
+from xml.dom.minidom import parse, parseString
 
 banner = """
   ______   .___  ___. .__   __.  __     .______       _______ .______     ______   .______     .___________. _______ .______
@@ -39,6 +40,8 @@ def create_reports(all_report_texts):
                 codecov_report = codecov_converter.convert_coverage_py(json.loads(data_text), codecov_report)
             elif is_coverage_go(data_text):
                 codecov_report = codecov_converter.convert_coverage_go(data_text, codecov_report)
+            elif is_clover(data_text):
+                codecov_report = codecov_converter.convert_clover(parse(data_text), codecov_report)
         else:
             print("* CODECOV_TOKEN not configured.")
 
@@ -49,6 +52,8 @@ def create_reports(all_report_texts):
                 coveralls_report = coveralls_converter.convert_coverage_py(json.loads(data_text), coveralls_report)
             elif is_coverage_go(data_text):
                 coveralls_report = coveralls_converter.convert_coverage_go(data_text, coveralls_report)
+            elif is_clover(data_text):
+                coveralls_report = coveralls_converter.convert_clover(parse(data_text), coveralls_report)
         else:
             print("* COVERALLS_REPO_TOKEN not configured.")
 
@@ -68,6 +73,13 @@ def create_reports(all_report_texts):
                     codacy_reports[go_lang] = []
                 if go_report is not None:
                     codacy_reports[go_lang].append(go_report)
+            elif is_clover(data_text):
+                php_report = codacy_converter.convert_clover(parse(data_text))
+                php_lang = codacy_converter.Language.PHP.capitalized()
+                if php_lang not in codacy_reports:
+                    codacy_reports[php_lang] = []
+                if php_report is not None:
+                    codacy_reports[php_lang].append(php_report)
         else:
             print("* CODACY_PROJECT_TOKEN not configured.")
 

@@ -26,7 +26,7 @@ setup(
          'src/omni_coveragereporter/omni_coveragereporter_python.py',
          'src/omni_coveragereporter/report_detector.py',
     ],
-    version='0.0.2',
+    version='0.0.3',
     description='Omni Coverage Reporter. Strives to be as universal as possible in receiving, converting and sending reports from many types to different online API''s',
     author='João Esperancinha',
     author_email='jofisaes@gmail.com',

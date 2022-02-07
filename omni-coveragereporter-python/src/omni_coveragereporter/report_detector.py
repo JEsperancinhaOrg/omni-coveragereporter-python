@@ -9,3 +9,9 @@ def is_coverage_go(report_text):
     if report_text.startswith("mode:") and "go:" in report_text:
         return True
     return False
+
+
+def is_clover(report_text):
+    if "coverage generated" in report_text and "project timestamp" in report_text:
+        return True
+    return False
