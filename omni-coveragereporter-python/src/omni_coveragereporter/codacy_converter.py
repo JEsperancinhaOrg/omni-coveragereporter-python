@@ -12,6 +12,7 @@ class Language(Enum):
     PYTHON = 4
     JAVA_SCRIPT = 5
     GO = 6
+    PHP = 7
 
     def capitalized(self):
         name = self.name
@@ -30,6 +31,8 @@ class Language(Enum):
             return "js"
         if self is Language.GO:
             return "go"
+        if self is Language.PHP:
+            return "php"
 
 
 def convert_coverage_py(data):
@@ -108,3 +111,7 @@ def convert_coverage_go(data_text):
         source["total"] = int(
             (len(list(filter(lambda x: x > 0, coverage_per_file.values()))) * 100) / len(coverage_per_file))
     return codacy_report
+
+
+def convert_clover(data_text):
+    return None

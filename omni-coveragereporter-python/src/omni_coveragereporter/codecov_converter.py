@@ -66,3 +66,7 @@ def convert_coverage_go(data_text, report=None):
                 codecov_file[str(int(line) - i_back)] = int(hits)
 
     return codecov_report
+
+
+def convert_clover(data_text, codecov_report):
+    return None
