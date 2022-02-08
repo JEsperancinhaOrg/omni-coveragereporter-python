@@ -50,7 +50,7 @@ jobs:
          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     - name: Move tmp to report - Test Multiple File Upload
       run: mv tmp/*.out .
-    - name: Sends multiple Reports (Go and Python)
+    - name: Sends multiple Reports (Go, Python and PHP)
       run: python3 omni-coveragereporter-python/src/omni_coveragereporter/omni_coveragereporter_python.py
       env:
          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}

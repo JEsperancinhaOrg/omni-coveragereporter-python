@@ -134,8 +134,11 @@ def convert_clover(data_xml, report=None):
                 line_coverage = [None] * total_lines
                 for line in file.iter('line'):
                     line_coverage[int(line.attrib['num'])] = int(line.attrib['count'])
+                file_name = absolute_filename.replace(os.getcwd(), "")
+                if file_name.startswith("/"):
+                    file_name = file_name[1:]
                 source_file = {
-                    'name': absolute_filename,
+                    'name': file_name,
                     'source_digest': hashlib.md5(file_content_bytes).hexdigest(),
                     'coverage': line_coverage,
                 }
