@@ -3,7 +3,7 @@ import os
 import common
 import coveragego_parser
 import coveragepy_parser
-
+import report_detector
 
 def convert_coverage_py(data, report=None):
     if report:
@@ -52,7 +52,7 @@ def convert_coverage_go(data_text, report=None):
             if codecov_file is None:
                 codecov_file = {}
                 codecov_files[report_file_name] = codecov_file
-                total_lines = coveragego_parser.total_lines(absolute_file_name)
+                total_lines = report_detector.total_lines(absolute_file_name)
                 for line in range(1, total_lines + 1):
                     codecov_file[str(line)] = None
 
@@ -67,6 +67,7 @@ def convert_coverage_go(data_text, report=None):
 
     return codecov_report
 
+
 def convert_clover(data_xml, report=None):
     if report:
         codecov_files = report['coverage']
@@ -75,14 +76,20 @@ def convert_clover(data_xml, report=None):
         codecov_files = {}
         codecov_report = {"coverage": codecov_files}
 
-    print("*****")
-    print(data_xml)
     for project in data_xml.iter('project'):
-        print(project)
         for file in project.iter('file'):
-            print(file)
-            for line in file.iter('line'):
-                print(line)
-    # print(data_xml.findAll('project'))
+            absolute_filename = file.attrib['name']
+            file_name = absolute_filename.replace(os.getcwd(), "")
+            if file_name.startswith("/"):
+                file_name = file_name[1:]
+            codecov_file = codecov_files[file_name] if file_name in codecov_files else None
+            if codecov_file is None:
+                codecov_file = {}
+                codecov_files[file_name] = codecov_file
+                total_lines = report_detector.total_lines(absolute_filename)
+                for line in range(1, total_lines + 1):
+                    codecov_file[str(line)] = None
 
-    return None
+            for line in file.iter('line'):
+                codecov_file[str(line.attrib['num'])] =int(line.attrib['count'])
+    return codecov_report

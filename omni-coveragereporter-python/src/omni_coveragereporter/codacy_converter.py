@@ -3,6 +3,7 @@ from enum import Enum
 
 import common
 import coveragego_parser
+import report_detector
 
 
 class Language(Enum):
@@ -79,7 +80,7 @@ def convert_coverage_go(data_text):
             report_file_name = absolute_file_name.replace(os.getcwd(), '')
             if report_file_name.startswith("/"):
                 report_file_name = report_file_name[1:]
-            file_lines = coveragego_parser.total_lines(absolute_file_name)
+            file_lines = report_detector.total_lines(absolute_file_name)
             total_lines += file_lines
             filter_result = list(filter(lambda file: file['filename'] == report_file_name, file_reports))
             current_file_object = filter_result[0] if len(filter_result) > 0 else None

@@ -1,3 +1,10 @@
+def total_lines(file_name):
+    f = open(file_name)
+    data = f.readlines()
+    f.close()
+    return len(data)
+
+
 def is_coverage_py(report_text):
     if report_text.startswith("{") and report_text.endswith(
             "}") and "\"meta\":" in report_text and "\"files\":" in report_text:

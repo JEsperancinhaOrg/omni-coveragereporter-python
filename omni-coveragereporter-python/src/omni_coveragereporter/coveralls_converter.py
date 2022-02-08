@@ -6,6 +6,7 @@ import git
 import common
 import coveragego_parser
 import coveragepy_parser
+import report_detector
 
 repo = git.Repo(os.getcwd())
 master = repo.head.reference
@@ -93,7 +94,7 @@ def convert_coverage_go(data_text, report=None):
             report_file_name = absolute_file_name.replace(os.getcwd(), '')
             if report_file_name.startswith("/"):
                 report_file_name = report_file_name[1:]
-            total_lines = coveragego_parser.total_lines(absolute_file_name)
+            total_lines = report_detector.total_lines(absolute_file_name)
             filter_result = list(filter(lambda file: file['name'] == report_file_name, coveralls_files))
             current_file_object = filter_result[0] if len(filter_result) > 0 else None
             if current_file_object is None:
