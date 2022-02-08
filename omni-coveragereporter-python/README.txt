@@ -1,6 +1,6 @@
 Experimental Python Omni Reporter
 
-R       elease 0.0.3 - 2022/02/08
+Release 0.0.3 - 2022/02/08
 
 Clover support
 
