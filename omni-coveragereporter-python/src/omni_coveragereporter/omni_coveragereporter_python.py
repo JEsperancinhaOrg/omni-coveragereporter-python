@@ -110,6 +110,7 @@ if __name__ == '__main__':
     coverageCloverDocs = [name for name in glob.glob("clover*.xml")]
     allDocs.extend(coveragePyDocs)
     allDocs.extend(coverageGoDocs)
+    allDocs.extend(coverageCloverDocs)
 
     print(f"- Found potential report files {allDocs}")
 

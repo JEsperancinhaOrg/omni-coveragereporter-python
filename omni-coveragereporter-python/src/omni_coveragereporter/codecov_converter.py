@@ -5,6 +5,7 @@ import coveragego_parser
 import coveragepy_parser
 import report_detector
 
+
 def convert_coverage_py(data, report=None):
     if report:
         codecov_files = report['coverage']
@@ -91,5 +92,5 @@ def convert_clover(data_xml, report=None):
                     codecov_file[str(line)] = None
 
             for line in file.iter('line'):
-                codecov_file[str(line.attrib['num'])] =int(line.attrib['count'])
+                codecov_file[str(line.attrib['num'])] = int(line.attrib['count'])
     return codecov_report
