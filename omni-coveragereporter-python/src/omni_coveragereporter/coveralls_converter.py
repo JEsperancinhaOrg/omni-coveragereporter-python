@@ -121,5 +121,30 @@ def convert_coverage_go(data_text, report=None):
     return coveralls_report
 
 
-def convert_clover(data_text, coveralls_report):
-    return None
+def convert_clover(data_xml, report=None):
+    coveralls_files, coveralls_report = create_coveralls_common(report)
+    source_files = coveralls_report['source_files']
+    for project in data_xml.iter('project'):
+        for file in project.iter('file'):
+            absolute_filename = file.attrib['name']
+            if common.valid(absolute_filename):
+                text_file = open(absolute_filename, "r")
+                file_content_bytes = text_file.read().encode('utf-8')
+                total_lines = report_detector.total_lines(absolute_filename) + 2
+                line_coverage = [None] * total_lines
+                for line in file.iter('line'):
+                    line_coverage[int(line.attrib['num'])] = int(line.attrib['count'])
+                source_file = {
+                    'name': absolute_filename,
+                    'source_digest': hashlib.md5(file_content_bytes).hexdigest(),
+                    'coverage': line_coverage,
+                }
+                filter_result = list(filter(lambda file: file['name'] == absolute_filename, coveralls_files))
+                existing_file = filter_result[0] if len(filter_result) > 0 else None
+                if existing_file is None:
+                    source_files.append(source_file)
+                else:
+                    existing_file['coverage'] = merge_coverage(existing_file, source_file)
+
+    print(coveralls_report)
+    return coveralls_report
