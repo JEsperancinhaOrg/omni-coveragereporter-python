@@ -1,6 +1,6 @@
 # omni-coveragereporter-python
 
-# Release 0.0.3 - Upcoming version
+# Release 0.0.3 - 2022/02/08
 
 Clover support
 
