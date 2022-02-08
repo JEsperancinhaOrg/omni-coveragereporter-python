@@ -67,7 +67,6 @@ def convert_coverage_go(data_text, report=None):
 
     return codecov_report
 
-
 def convert_clover(data_xml, report=None):
     if report:
         codecov_files = report['coverage']
