@@ -107,6 +107,7 @@ if __name__ == '__main__':
     allDocs = []
     coveragePyDocs = [name for name in glob.glob("coverage*.json")]
     coverageGoDocs = [name for name in glob.glob("coverage*.out")]
+    coverageCloverDocs = [name for name in glob.glob("clover*.xml")]
     allDocs.extend(coveragePyDocs)
     allDocs.extend(coverageGoDocs)
 
