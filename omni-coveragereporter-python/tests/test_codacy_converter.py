@@ -8,6 +8,7 @@ sys.path.insert(0, os.path.abspath('omni-coveragereporter-python/src/omni_covera
 
 import codacy_converter
 from omni_coveragereporter_python import get_text_from_file
+import xml.etree.ElementTree as ET
 
 
 def test_capitalized():
@@ -23,3 +24,9 @@ def test_convert_coverage_go():
     text_from_file = get_text_from_file("coverage.out").replace("${test}", f'{os.getcwd()}/points')
     coverage_go_report = codacy_converter.convert_coverage_go(text_from_file)
     assert len(json.dumps(coverage_go_report)) > 10
+
+
+def test_convert_clover():
+    text_from_file = get_text_from_file("clover.xml").replace("${test}", f'{os.getcwd()}/src')
+    coverage_clover_report = codacy_converter.convert_clover(ET.fromstring(text_from_file))
+    assert len(json.dumps(coverage_clover_report)) > 10

@@ -114,5 +114,33 @@ def convert_coverage_go(data_text):
     return codacy_report
 
 
-def convert_clover(data_text):
-    return None
+def convert_clover(data_xml):
+    total_covered = 0
+    total_lines = 0
+    codacy_report = {'total': 0}
+    codacy_file_reports = []
+    codacy_report['fileReports'] = codacy_file_reports
+
+    for project in data_xml.iter('project'):
+        for file in project.iter('file'):
+            absolute_filename = file.attrib['name']
+            file_name = absolute_filename.replace(os.getcwd(), "")
+            if file_name.startswith("/"):
+                file_name = file_name[1:]
+            if common.valid(file_name):
+                file_covered = 0
+                file_lines = report_detector.total_lines(absolute_filename)
+                line_coverage = {}
+                for line in file.iter('line'):
+                    count = int(line.attrib['count'])
+                    line_coverage[str(line.attrib['num'])] = count
+                    if count > 0:
+                        total_covered += 1
+                total_lines += file_lines
+                codacy_file_report = {'filename': file_name, 'total': int(file_covered * 100 / file_lines)}
+                codacy_file_reports.append(codacy_file_report)
+                codacy_file_report['coverage'] = line_coverage
+
+    total_percent = int((total_covered * 100) / total_lines)
+    codacy_report['total'] = total_percent
+    return codacy_report

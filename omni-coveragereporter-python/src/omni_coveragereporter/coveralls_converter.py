@@ -149,5 +149,4 @@ def convert_clover(data_xml, report=None):
                 else:
                     existing_file['coverage'] = merge_coverage(existing_file, source_file)
 
-    print(coveralls_report)
     return coveralls_report
