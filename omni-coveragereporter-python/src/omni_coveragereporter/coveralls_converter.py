@@ -133,7 +133,7 @@ def convert_clover(data_xml, report=None):
                 total_lines = report_detector.total_lines(absolute_filename) + 2
                 line_coverage = [None] * total_lines
                 for line in file.iter('line'):
-                    line_coverage[int(line.attrib['num'])] = int(line.attrib['count'])
+                    line_coverage[int(line.attrib['num']) - 1] = int(line.attrib['count'])
                 file_name = absolute_filename.replace(os.getcwd(), "")
                 if file_name.startswith("/"):
                     file_name = file_name[1:]
