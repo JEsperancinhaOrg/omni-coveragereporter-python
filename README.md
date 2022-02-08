@@ -5,7 +5,6 @@
 
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
-[![GitHub release](https://img.shields.io/github/release-pre/jesperancinhaorg/omni-coveragereporter-python.svg)](https://github.com/jesperancinhaorg/omni-coveragereporter-python/releases)
 [![GitHub release](https://img.shields.io/github/v/release/jesperancinhaorg/omni-coveragereporter-python)](https://github.com/jesperancinhaorg/omni-coveragereporter-python/releases)
 [![PyPI](https://img.shields.io/pypi/v/omni-coveragereporter)](https://pypi.org/project/omni-coveragereporter/)
 
